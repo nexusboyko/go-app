@@ -1,0 +1,50 @@
+package templates
+
+templ footer() {
+	<footer class="bg-slate-600 p-4">footer</footer>
+}
+
+templ Layout(contents templ.Component) {
+	<!DOCTYPE html>
+	<html lang="en" data-theme="dark">
+	
+	<head>
+		<title>go-app</title>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="static/script/htmx.min.js"></script>
+		<link rel="icon" href="static/images/favicon.ico" type="image/x-icon">
+		<link href="static/css/output.css" rel="stylesheet">
+	</head>
+
+	<body class="w-screen h-screen">
+
+		<main class="flex flex-col items-center font-mono">
+			<h1 class="text-xl mb-2">Click to login using Google!</h1>
+				<button 
+					hx-get="/login"
+					hx-swap="none"
+					hx-boost="false"
+					class="btn btn-lg text-lg btn-primary"
+				>
+					login
+				</button>
+			@contents
+		</main>
+		// @footer()
+	
+		<script>
+			document.body.addEventListener('htmx:configRequest', (event) => {
+				console.log('config req!')
+				// event.detail.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+				event.detail.headers['Access-Control-Allow-Origin'] = [
+					// '*', 
+					"http://localhost:8080"
+					// "https://accounts.google.com/"
+				];
+			});
+		</script>
+	</body>
+
+	</html>
+}

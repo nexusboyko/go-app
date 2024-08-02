@@ -1,0 +1,23 @@
+package components
+
+import "app/internal/db"
+
+templ ChatBubble(user db.User) {
+  <div class="chat chat-start">
+    <div class="chat-image avatar">
+      <div class="w-10 rounded-full">
+        <img
+          alt="pfp"
+          src={user.Profile.Picture}
+          referrerpolicy="no-referrer"
+        />
+      </div>
+    </div>
+    <div class="chat-header">
+      {user.Profile.Email}
+      <time class="text-xs opacity-50">{user.AuthToken.Expiry.Local().Format("2006.01.02 04:15:05")}</time>
+    </div>
+    <div class="chat-bubble">I'm {user.Profile.GivenName} {user.Profile.FamilyName}!</div>
+    <div class="chat-footer opacity-50">Logged in</div>
+  </div>
+}
