@@ -14,7 +14,7 @@ func Index(c *gin.Context) {
 		c.Redirect(http.StatusPermanentRedirect, "/home")
 	}
 
-	err := templates.Layout(templates.Index()).Render(c, c.Writer)
+	err := templates.Layout(templates.Index(), m.IsLoggedIn(c)).Render(c, c.Writer)
 
 	if err != nil {
 		log.Println("Error rendering template (index):", err.Error())

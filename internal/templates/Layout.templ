@@ -4,7 +4,7 @@ templ footer() {
 	<footer class="bg-slate-600 p-4">footer</footer>
 }
 
-templ Layout(contents templ.Component) {
+templ Layout(contents templ.Component, loggedIn bool) {
 	<!DOCTYPE html>
 	<html lang="en" data-theme="dark">
 	
@@ -20,7 +20,8 @@ templ Layout(contents templ.Component) {
 	<body class="w-screen h-screen">
 
 		<main class="flex flex-col items-center font-mono">
-			<h1 class="text-xl mb-2">Click to login using Google!</h1>
+			if !loggedIn {
+				<h1 class="text-xl my-2">Click to login using Google!</h1>
 				<button 
 					hx-get="/login"
 					hx-swap="none"
@@ -29,6 +30,7 @@ templ Layout(contents templ.Component) {
 				>
 					login
 				</button>
+			}
 			@contents
 		</main>
 		// @footer()
