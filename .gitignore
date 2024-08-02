@@ -23,3 +23,9 @@ go.work.sum
 
 # env file
 .env
+
+# generated templates
+*_templ.go
+
+# air build folder
+tmp
