@@ -722,8 +722,13 @@ select{
   --tw-contain-style:  ;
 }
 
-.me-2{
-  margin-inline-end: 0.5rem;
+.m-12{
+  margin: 3rem;
+}
+
+.my-2{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mb-2{
@@ -738,12 +743,12 @@ select{
   display: contents;
 }
 
-.h-screen{
-  height: 100vh;
+.h-full{
+  height: 100%;
 }
 
-.w-screen{
-  width: 100vw;
+.h-screen{
+  height: 100vh;
 }
 
 .w-10{
@@ -752,6 +757,10 @@ select{
 
 .w-\[80\%\]{
   width: 80%;
+}
+
+.w-screen{
+  width: 100vw;
 }
 
 .flex-col{
@@ -802,18 +811,12 @@ select{
   line-height: 1rem;
 }
 
-.font-bold{
-  font-weight: 700;
+.font-semibold{
+  font-weight: 600;
 }
 
 .opacity-50{
   opacity: 0.5;
-}
-
-.shadow-sm{
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 /* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
